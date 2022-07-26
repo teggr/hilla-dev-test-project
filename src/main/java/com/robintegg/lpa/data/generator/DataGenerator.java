@@ -1,9 +1,13 @@
-package com.example.application.data.generator;
+package com.robintegg.lpa.data.generator;
 
-import com.example.application.data.Role;
-import com.example.application.data.entity.User;
-import com.example.application.data.service.UserRepository;
+import com.robintegg.lpa.data.Role;
+import com.robintegg.lpa.data.entity.Link;
+import com.robintegg.lpa.data.entity.User;
+import com.robintegg.lpa.data.service.LinkRepository;
+import com.robintegg.lpa.data.service.UserRepository;
 import com.vaadin.flow.spring.annotation.SpringComponent;
+
+import java.time.Instant;
 import java.util.Collections;
 import java.util.Set;
 import org.slf4j.Logger;
@@ -16,7 +20,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class DataGenerator {
 
     @Bean
-    public CommandLineRunner loadData(PasswordEncoder passwordEncoder, UserRepository userRepository) {
+    public CommandLineRunner loadData(PasswordEncoder passwordEncoder, UserRepository userRepository, LinkRepository linkRepository) {
         return args -> {
             Logger logger = LoggerFactory.getLogger(getClass());
             if (userRepository.count() != 0L) {
@@ -44,6 +48,14 @@ public class DataGenerator {
                     "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=128&h=128&q=80");
             admin.setRoles(Set.of(Role.USER, Role.ADMIN));
             userRepository.save(admin);
+
+            logger.info("... generating 2 Link entities...");
+
+            Link one = new Link(null, "https://robintegg.com", Instant.now());
+            linkRepository.save(one);
+
+            Link other = new Link(null, "https://hilla.dev", Instant.now());
+            linkRepository.save(other);
 
             logger.info("Generated demo data");
         };

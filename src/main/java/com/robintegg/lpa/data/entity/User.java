@@ -1,7 +1,8 @@
-package com.example.application.data.entity;
+package com.robintegg.lpa.data.entity;
 
-import com.example.application.data.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.robintegg.lpa.data.Role;
+
 import java.util.Set;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -22,7 +23,6 @@ public class User extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<Role> roles;
-    @Lob
     private String profilePictureUrl;
 
     public String getUsername() {

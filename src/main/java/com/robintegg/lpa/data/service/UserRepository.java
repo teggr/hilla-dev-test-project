@@ -1,8 +1,9 @@
-package com.example.application.data.service;
+package com.robintegg.lpa.data.service;
 
-import com.example.application.data.entity.User;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.robintegg.lpa.data.entity.User;
 
 public interface UserRepository extends JpaRepository<User, UUID> {
 

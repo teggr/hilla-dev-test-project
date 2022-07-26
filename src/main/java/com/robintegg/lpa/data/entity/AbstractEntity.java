@@ -1,4 +1,4 @@
-package com.example.application.data.entity;
+package com.robintegg.lpa.data.entity;
 
 import java.util.UUID;
 import javax.persistence.GeneratedValue;

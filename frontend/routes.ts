@@ -1,7 +1,8 @@
 import { Route } from '@vaadin/router';
-import Role from './generated/com/example/application/data/Role';
+import Role from './generated/com/robintegg/lpa/data/Role';
 import { appStore } from './stores/app-store';
 import './views/helloworld/hello-world-view';
+import './views/frontpage/frontpage-view';
 import './views/main-layout';
 
 export type ViewRoute = Route & {
@@ -28,16 +29,10 @@ export const views: ViewRoute[] = [
   // place routes below (more info https://hilla.dev/docs/routing)
   {
     path: '',
-    component: 'hello-world-view',
-    requiresLogin: true,
+    component: 'frontpage-view',
+    requiresLogin: false,
     icon: '',
-    title: '',
-    action: async (_context, _command) => {
-      if (!hasAccess(_context.route)) {
-        return _command.redirect('login');
-      }
-      return;
-    },
+    title: 'Links'
   },
   {
     path: 'hello',

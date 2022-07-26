@@ -1,7 +1,7 @@
-package com.example.application.security;
+package com.robintegg.lpa.security;
 
-import com.example.application.data.entity.User;
-import com.example.application.data.service.UserRepository;
+import com.robintegg.lpa.data.entity.User;
+import com.robintegg.lpa.data.service.UserRepository;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.server.VaadinServletRequest;
 import java.util.Optional;

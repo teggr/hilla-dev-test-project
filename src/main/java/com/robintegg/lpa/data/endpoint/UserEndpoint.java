@@ -1,7 +1,7 @@
-package com.example.application.data.endpoint;
+package com.robintegg.lpa.data.endpoint;
 
-import com.example.application.data.entity.User;
-import com.example.application.security.AuthenticatedUser;
+import com.robintegg.lpa.data.entity.User;
+import com.robintegg.lpa.security.AuthenticatedUser;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.Endpoint;
 import java.util.Optional;

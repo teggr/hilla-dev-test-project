@@ -1,11 +1,11 @@
 import { RouterLocation } from '@vaadin/router';
-import User from 'Frontend/generated/com/example/application/data/entity/User';
-import Role from 'Frontend/generated/com/example/application/data/Role';
+import User from 'Frontend/generated/com/robintegg/lpa/data/entity/User';
+import Role from 'Frontend/generated/com/robintegg/lpa/data/Role';
 import { UserEndpoint } from 'Frontend/generated/endpoints';
 import { makeAutoObservable } from 'mobx';
 
 export class AppStore {
-  applicationName = 'landing-page-app';
+  applicationName = 'robintegg.com';
 
   // The location, relative to the base path, e.g. "hello" when viewing "/hello"
   location = '';

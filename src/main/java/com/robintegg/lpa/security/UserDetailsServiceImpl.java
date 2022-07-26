@@ -1,7 +1,5 @@
-package com.example.application.security;
+package com.robintegg.lpa.security;
 
-import com.example.application.data.entity.User;
-import com.example.application.data.service.UserRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +9,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import com.robintegg.lpa.data.entity.User;
+import com.robintegg.lpa.data.service.UserRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

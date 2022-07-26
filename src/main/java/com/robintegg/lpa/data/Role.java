@@ -1,4 +1,4 @@
-package com.example.application.data;
+package com.robintegg.lpa.data;
 
 public enum Role {
     USER, ADMIN;

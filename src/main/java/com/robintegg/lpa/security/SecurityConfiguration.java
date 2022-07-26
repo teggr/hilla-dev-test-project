@@ -1,4 +1,4 @@
-package com.example.application.security;
+package com.robintegg.lpa.security;
 
 import com.vaadin.flow.spring.security.VaadinWebSecurityConfigurerAdapter;
 import java.util.Base64;
@@ -23,7 +23,7 @@ public class SecurityConfiguration extends VaadinWebSecurityConfigurerAdapter {
     // The secret is stored in /config/secrets/application.properties by default.
     // Never commit the secret into version control; each environment should have
     // its own secret.
-    @Value("${com.example.application.auth.secret}")
+    @Value("${com.robintegg.lpa.auth.secret}")
     private String authSecret;
 
     @Bean
@@ -39,7 +39,7 @@ public class SecurityConfiguration extends VaadinWebSecurityConfigurerAdapter {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         setLoginView(http, "/login", LOGOUT_URL);
         setStatelessAuthentication(http, new SecretKeySpec(Base64.getDecoder().decode(authSecret), JwsAlgorithms.HS256),
-                "com.example.application");
+                "com.robintegg.lpa");
     }
 
     @Override
